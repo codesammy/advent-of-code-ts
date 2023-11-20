@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.9.1",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "start": "npx ts-node src/aoc2022/day01.ts"
+  }
+}
