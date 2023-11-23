@@ -1,3 +1,5 @@
+import './common';
+
 let input: string = `vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
 PmmdzqPrVvPwwTWBwg
@@ -5,9 +7,7 @@ wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
 ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw`;
 
-import * as fs from 'fs';
-import path from 'path';
-input = fs.readFileSync(path.resolve(__dirname, './input03')).toString();
+input = readInput('./input03');
 
 class Rucksack {
   compartments: string[];
@@ -27,7 +27,6 @@ class Rucksack {
         return item;
       }
     }
-    console.log(this);
     throw new Error("No common item found!");
   }
 }
@@ -41,17 +40,17 @@ function priority(item: string) {
 }
 
 function silver(input: string) {
-  let sum = input.trim().split("\n")
+  let sum = input.split("\n")
   .map(line => [line.substring(0, line.length / 2), line.substring(line.length / 2)])
   .map(items => new Rucksack(items))
   .map(rs => rs.common())
   .map(item => priority(item))
-  .reduce((sum, e) => sum + e, 0);
+  .sum();
   console.log(sum);
 }
 
 function gold(input: string) {
-  let sum = input.trim().split('\n')
+  let sum = input.split('\n')
   .reduce((acc: Array<Array<string>>, e) => {
     if (acc[acc.length-1].length < 3) {
       acc[acc.length-1].push(e);
@@ -63,7 +62,7 @@ function gold(input: string) {
   .map(items => new Rucksack(items))
   .map(rs => rs.common())
   .map(item => priority(item))
-  .reduce((sum, e) => sum + e, 0);
+  .sum();
   console.log(sum);
 }
 

@@ -1,10 +1,10 @@
+import './common';
+
 let input: string = `A Y
 B X
 C Z`;
 
-import * as fs from 'fs';
-import path from 'path';
-input = fs.readFileSync(path.resolve(__dirname, './input02')).toString();
+input = readInput('./input02');
 
 class Shape {
   name: string;
@@ -97,25 +97,23 @@ class Round {
 
 function silver(input: string) {
   let rounds:Round[] = input.split("\n")
-  .filter(line => line.length == 3)
   .map(line => line.split(" "))
   .map(shapes => new Round(parseChar(shapes[0]), parseChar(shapes[1])));
 
   let totalScore:number = rounds
   .map(round => round.score())
-  .reduce((sum, e) => sum + e, 0);
+  .sum();
   console.log(totalScore);
 }
 
 function gold(input: string) {
   let rounds:Round[] = input.split("\n")
-  .filter(line => line.length == 3)
   .map(line => line.split(" "))
   .map(shapes => {let elfShape = parseChar(shapes[0]); return new Round(elfShape, parseCharStrategy(shapes[1], elfShape))});
 
   let totalScore:number = rounds
   .map(round => round.score())
-  .reduce((sum, e) => sum + e, 0);
+  .sum();
   console.log(totalScore);
 }
 
