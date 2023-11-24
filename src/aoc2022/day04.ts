@@ -24,7 +24,7 @@ class Range {
   }
 }
 
-function silver(input: string) {
+function part1(input: string) {
   let count = input.split("\n")
   .map(line => line.split(","))
   .map(ranges => ranges.map(r => new Range(r)))
@@ -34,7 +34,7 @@ function silver(input: string) {
   console.log(count);
 }
 
-function gold(input: string) {
+function part2(input: string) {
   let count = input.split("\n")
   .map(line => line.split(","))
   .map(ranges => ranges.map(r => new Range(r)))
@@ -44,4 +44,4 @@ function gold(input: string) {
   console.log(count);
 }
 
-gold(input);
+part2(input);

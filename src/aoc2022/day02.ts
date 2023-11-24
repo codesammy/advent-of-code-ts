@@ -95,7 +95,7 @@ class Round {
   }
 }
 
-function silver(input: string) {
+function part1(input: string) {
   let rounds:Round[] = input.split("\n")
   .map(line => line.split(" "))
   .map(shapes => new Round(parseChar(shapes[0]), parseChar(shapes[1])));
@@ -106,7 +106,7 @@ function silver(input: string) {
   console.log(totalScore);
 }
 
-function gold(input: string) {
+function part2(input: string) {
   let rounds:Round[] = input.split("\n")
   .map(line => line.split(" "))
   .map(shapes => {let elfShape = parseChar(shapes[0]); return new Round(elfShape, parseCharStrategy(shapes[1], elfShape))});
@@ -117,4 +117,4 @@ function gold(input: string) {
   console.log(totalScore);
 }
 
-gold(input);
+part2(input);

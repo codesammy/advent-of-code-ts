@@ -39,7 +39,7 @@ function priority(item: string) {
   }
 }
 
-function silver(input: string) {
+function part1(input: string) {
   let sum = input.split("\n")
   .map(line => [line.substring(0, line.length / 2), line.substring(line.length / 2)])
   .map(items => new Rucksack(items))
@@ -49,7 +49,7 @@ function silver(input: string) {
   console.log(sum);
 }
 
-function gold(input: string) {
+function part2(input: string) {
   let sum = input.split('\n')
   .reduce((acc: Array<Array<string>>, e) => {
     if (acc[acc.length-1].length < 3) {
@@ -66,4 +66,4 @@ function gold(input: string) {
   console.log(sum);
 }
 
-gold(input);
+part2(input);

@@ -27,18 +27,18 @@ class Elf {
   }
 }
 
-function silver(input: string) {
+function part1(input: string) {
   let elves:Elf[] = input.split("\n\n").map(e => new Elf(e.split("\n").map(x => parseInt(x))) );
   elves.sort((a, b) => b.total() - a.total());
   let maxCarryElf = elves[0];
   console.log(maxCarryElf.total());
 }
 
-function gold(input: string) {
+function part2(input: string) {
   let elves:Elf[] = input.split("\n\n").map(e => new Elf(e.split("\n").map(x => parseInt(x))) );
   elves.sort((a, b) => b.total() - a.total());
   let maxCarryElves = elves.slice(0, 3);
   console.log(maxCarryElves.map(elf => elf.total()).sum());
 }
 
-gold(input);
+part2(input);

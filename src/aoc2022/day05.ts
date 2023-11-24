@@ -64,7 +64,7 @@ class Crane {
   }
 }
 
-function silver(input: string) {
+function part1(input: string) {
   const [stackLines, operationLines] = input.split("\n\n");
   const stacks:Array<Stack> = stackLines.split("\n")
   .map(line => line.everyNthChar(4))
@@ -83,7 +83,7 @@ function silver(input: string) {
   console.log(stacksMoved.map(s => s.removeTop(1)[0]).join(""));
 }
 
-function gold(input: string) {
+function part2(input: string) {
   const [stackLines, operationLines] = input.split("\n\n");
   const stacks:Array<Stack> = stackLines.split("\n")
   .map(line => line.everyNthChar(4))
@@ -102,4 +102,4 @@ function gold(input: string) {
   console.log(stacksMoved.map(s => s.removeTop(1)[0]).join(""));
 }
 
-gold(input);
+part2(input);
