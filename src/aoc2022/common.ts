@@ -3,6 +3,7 @@ declare global {
     interface Array<T> {
         sum(): number;
         transpose(): Array<T>;
+        unique(): boolean;
     }
 
     interface String {
@@ -32,6 +33,13 @@ if (!Array.prototype.transpose) {
             a.push(col);
         }
         return a;
+    }
+}
+
+if (!Array.prototype.unique) {
+    
+    Array.prototype.unique = function<T>(this: Array<T>) {
+        return this.length == [...new Set(this)].length;
     }
 }
 
