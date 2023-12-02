@@ -1,4 +1,4 @@
-import './common';
+import '../common';
 
 let input: string = `$ cd /
 $ ls
@@ -24,7 +24,7 @@ $ ls
 5626152 d.ext
 7214296 k`;
 
-input = readInput('./input07');
+input = readInput('./aoc2022/input07');
 
 class File {
   parent: Directory;

@@ -1,4 +1,4 @@
-import './common';
+import '../common';
 
 let input: string = `2-4,6-8
 2-3,4-5
@@ -7,7 +7,7 @@ let input: string = `2-4,6-8
 6-6,4-6
 2-6,4-8`;
 
-input = readInput('./input04');
+input = readInput('./aoc2022/input04');
 
 class Range {
   low: number;

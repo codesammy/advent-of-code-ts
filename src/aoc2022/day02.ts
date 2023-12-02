@@ -1,10 +1,10 @@
-import './common';
+import '../common';
 
 let input: string = `A Y
 B X
 C Z`;
 
-input = readInput('./input02');
+input = readInput('./aoc2022/input02');
 
 class Shape {
   name: string;

@@ -1,4 +1,4 @@
-import './common';
+import '../common';
 
 let input: string = `1000
 2000
@@ -15,7 +15,7 @@ let input: string = `1000
 
 10000`;
 
-input = readInput('./input01');
+input = readInput('./aoc2022/input01');
 
 class Elf {
   calories: number[];

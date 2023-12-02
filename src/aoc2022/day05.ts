@@ -1,4 +1,4 @@
-import './common';
+import '../common';
 
 let input: string = `    [D]    
 [N] [C]    
@@ -10,7 +10,7 @@ move 3 from 1 to 3
 move 2 from 2 to 1
 move 1 from 1 to 2`;
 
-input = readInput('./input05');
+input = readInput('./aoc2022/input05');
 
 class Stack {
   num: number;

@@ -1,8 +1,8 @@
-import './common';
+import '../common';
 
 let input: string = `zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw`;
 
-input = readInput('./input06');
+input = readInput('./aoc2022/input06');
 
 class Device {
   input: string;

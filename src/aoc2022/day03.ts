@@ -1,4 +1,4 @@
-import './common';
+import '../common';
 
 let input: string = `vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
@@ -7,7 +7,7 @@ wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
 ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw`;
 
-input = readInput('./input03');
+input = readInput('./aoc2022/input03');
 
 class Rucksack {
   compartments: string[];
