@@ -1,6 +1,7 @@
 declare global {
 
     interface Array<T> {
+        min(): number;
         sum(): number;
         transpose(): Array<T>;
         unique(): boolean;
@@ -17,6 +18,13 @@ if (!Array.prototype.sum) {
 
     Array.prototype.sum = function (this: number[]) {
         return this.reduce((total, current) => total + current, 0);
+    }
+}
+
+if (!Array.prototype.min) {
+
+    Array.prototype.min = function (this: number[]) {
+        return this.reduce((min, current) => min < current ? min : current);
     }
 }
 
