@@ -36,7 +36,7 @@ function part2(input: string) {
     const pq2 = Math.sqrt(Math.pow(p/2, 2) - q)
     const lowestWin = Math.ceil(pq1 - pq2)
     const highestWin = Math.floor(pq1 + pq2)
-    console.log(Math.abs(highestWin-lowestWin+1))
+    console.log(highestWin-lowestWin+1)
 }
 
 part2(input)
