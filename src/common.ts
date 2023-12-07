@@ -2,6 +2,7 @@ declare global {
 
     interface Array<T> {
         min(): number;
+        max(): number;
         sum(): number;
         prod(): number;
         transpose(): Array<T>;
@@ -26,6 +27,13 @@ if (!Array.prototype.min) {
 
     Array.prototype.min = function (this: number[]) {
         return this.reduce((min, current) => min < current ? min : current);
+    }
+}
+
+if (!Array.prototype.max) {
+
+    Array.prototype.max = function (this: number[]) {
+        return this.reduce((max, current) => max > current ? max : current);
     }
 }
 
